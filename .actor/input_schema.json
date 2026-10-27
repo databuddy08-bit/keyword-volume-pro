@@ -1,0 +1,140 @@
+{
+    "title": "Keyword Search Volume Pro",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "keywords": {
+            "title": "Keywords",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Your keywords (or seed keywords in Ideas mode), one per line. No limit: duplicates are removed and lists run in batches of 1,000. Symbols and emojis Google Ads does not accept are removed automatically.",
+            "prefill": [
+                "event ticketing",
+                "sell tickets online"
+            ]
+        },
+        "mode": {
+            "title": "Mode",
+            "type": "string",
+            "editor": "select",
+            "description": "<b>Metrics</b>: one row per keyword you give. <b>Ideas</b>: your keywords become seeds and are expanded into related keyword ideas, each with full metrics.",
+            "enum": [
+                "metrics",
+                "ideas"
+            ],
+            "enumTitles": [
+                "Metrics for my keywords",
+                "Ideas from seed keywords"
+            ],
+            "default": "metrics"
+        },
+        "maxIdeas": {
+            "title": "Maximum ideas (Ideas mode)",
+            "type": "integer",
+            "description": "Cap on the number of idea rows returned, so a seed never surprises you with a huge bill. The best ideas come first (highest volume, or most relevant).",
+            "minimum": 1,
+            "maximum": 20000,
+            "default": 100
+        },
+        "geo": {
+            "title": "Location",
+            "type": "string",
+            "editor": "textfield",
+            "description": "Country code (us, de, in), country name (germany) or a Google Ads location ID (2840, or a city/region ID such as 1023191). Leave empty for worldwide.",
+            "prefill": "us",
+            "default": ""
+        },
+        "language": {
+            "title": "Language",
+            "type": "string",
+            "editor": "textfield",
+            "description": "Language code (en, es, de, zh-cn), name (spanish) or Google Ads language ID (1000). Leave empty for all languages.",
+            "prefill": "en",
+            "default": ""
+        },
+        "network": {
+            "title": "Network",
+            "type": "string",
+            "editor": "select",
+            "description": "Google Search only, or Google Search plus search partner sites.",
+            "enum": [
+                "google_search",
+                "google_search_and_partners"
+            ],
+            "enumTitles": [
+                "Google Search",
+                "Google Search + partners"
+            ],
+            "default": "google_search"
+        },
+        "includeTrend": {
+            "title": "Include monthly trend",
+            "type": "boolean",
+            "description": "Add monthly_searches (volume month by month) and a trend summary (rising / falling / stable, change %, peak month).",
+            "default": true
+        },
+        "trendMonths": {
+            "title": "Trend length",
+            "type": "string",
+            "editor": "select",
+            "description": "How many months of history in monthly_searches. Up to 4 years.",
+            "enum": [
+                "12",
+                "24",
+                "36",
+                "48"
+            ],
+            "enumTitles": [
+                "12 months",
+                "24 months",
+                "36 months",
+                "48 months"
+            ],
+            "default": "12"
+        },
+        "aiVolume": {
+            "title": "AI search volume (add-on)",
+            "type": "boolean",
+            "description": "Also return ai_search_volume — how often the keyword is used inside AI assistants — and ai_monthly_searches. Charged only for keywords that come back with an AI number. Needs a country and language (worldwide runs use United States / English).",
+            "default": false
+        },
+        "minSearchVolume": {
+            "title": "Minimum search volume (Ideas mode)",
+            "type": "integer",
+            "description": "Ideas mode: skip ideas below this monthly volume (free). 0 = keep all.",
+            "minimum": 0,
+            "default": 0
+        },
+        "negativeKeywords": {
+            "title": "Exclude ideas containing (Ideas mode)",
+            "type": "array",
+            "editor": "stringList",
+            "description": "Ideas mode: drop ideas that contain any of these words or phrases (e.g. free, jobs).",
+            "default": []
+        },
+        "sortBy": {
+            "title": "Sort ideas by (Ideas mode)",
+            "type": "string",
+            "editor": "select",
+            "description": "Which ideas come first (and are kept when the cap applies).",
+            "enum": [
+                "search_volume",
+                "relevance"
+            ],
+            "enumTitles": [
+                "Search volume",
+                "Relevance to the seeds"
+            ],
+            "default": "search_volume"
+        },
+        "includeAdultKeywords": {
+            "title": "Include adult keywords (Ideas mode)",
+            "type": "boolean",
+            "description": "Ideas mode: allow adult keyword ideas.",
+            "default": false
+        }
+    },
+    "required": [
+        "keywords"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "actorSpecification": 1,
+    "name": "keyword-volume-pro",
+    "title": "Keyword Search Volume Pro — Bulk Google Volume, CPC, Trends & Ideas",
+    "description": "Bulk Google keyword search volume, CPC, competition, top-of-page bids and up to 4-year monthly trends from Google Ads Keyword Planner data — no Google Ads account. Ideas mode, AI search volume, and a real-time HTTP API.",
+    "version": "1.0",
+    "buildTag": "latest",
+    "defaultMemoryMbytes": 256,
+    "usesStandbyMode": true,
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
+    "dockerfile": "../Dockerfile",
+    "readme": "../README.md"
+}

@@ -1,0 +1,218 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "transformation": {
+                "fields": [
+                    "keyword",
+                    "search_volume",
+                    "cpc",
+                    "competition",
+                    "competition_index",
+                    "low_top_of_page_bid",
+                    "high_top_of_page_bid",
+                    "trend.direction",
+                    "trend.change_pct",
+                    "trend.peak_month",
+                    "location_name",
+                    "language_name",
+                    "source"
+                ],
+                "flatten": [
+                    "trend"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "keyword": {
+                        "label": "Keyword"
+                    },
+                    "search_volume": {
+                        "label": "Search volume",
+                        "format": "number"
+                    },
+                    "cpc": {
+                        "label": "CPC (USD)",
+                        "format": "number"
+                    },
+                    "competition": {
+                        "label": "Competition"
+                    },
+                    "competition_index": {
+                        "label": "Competition index",
+                        "format": "number"
+                    },
+                    "low_top_of_page_bid": {
+                        "label": "Top-of-page bid low",
+                        "format": "number"
+                    },
+                    "high_top_of_page_bid": {
+                        "label": "Top-of-page bid high",
+                        "format": "number"
+                    },
+                    "trend.direction": {
+                        "label": "Trend"
+                    },
+                    "trend.change_pct": {
+                        "label": "Trend change %",
+                        "format": "number"
+                    },
+                    "trend.peak_month": {
+                        "label": "Peak month"
+                    },
+                    "location_name": {
+                        "label": "Location"
+                    },
+                    "language_name": {
+                        "label": "Language"
+                    },
+                    "source": {
+                        "label": "Source"
+                    }
+                }
+            }
+        },
+        "trends": {
+            "title": "Monthly trend",
+            "transformation": {
+                "fields": [
+                    "keyword",
+                    "search_volume",
+                    "trend.direction",
+                    "trend.change_pct",
+                    "monthly_searches"
+                ],
+                "flatten": [
+                    "trend"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "keyword": {
+                        "label": "Keyword"
+                    },
+                    "search_volume": {
+                        "label": "Search volume",
+                        "format": "number"
+                    },
+                    "trend.direction": {
+                        "label": "Trend"
+                    },
+                    "trend.change_pct": {
+                        "label": "Trend change %",
+                        "format": "number"
+                    },
+                    "monthly_searches": {
+                        "label": "Monthly searches",
+                        "format": "array"
+                    }
+                }
+            }
+        },
+        "ideas": {
+            "title": "Ideas",
+            "transformation": {
+                "fields": [
+                    "keyword",
+                    "seed_keywords",
+                    "search_volume",
+                    "cpc",
+                    "competition",
+                    "trend.direction"
+                ],
+                "flatten": [
+                    "trend"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "keyword": {
+                        "label": "Keyword"
+                    },
+                    "seed_keywords": {
+                        "label": "Seeds",
+                        "format": "array"
+                    },
+                    "search_volume": {
+                        "label": "Search volume",
+                        "format": "number"
+                    },
+                    "cpc": {
+                        "label": "CPC (USD)",
+                        "format": "number"
+                    },
+                    "competition": {
+                        "label": "Competition"
+                    },
+                    "trend.direction": {
+                        "label": "Trend"
+                    }
+                }
+            }
+        },
+        "ai": {
+            "title": "AI search volume",
+            "transformation": {
+                "fields": [
+                    "keyword",
+                    "search_volume",
+                    "ai_search_volume",
+                    "ai_monthly_searches"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "keyword": {
+                        "label": "Keyword"
+                    },
+                    "search_volume": {
+                        "label": "Search volume",
+                        "format": "number"
+                    },
+                    "ai_search_volume": {
+                        "label": "AI search volume",
+                        "format": "number"
+                    },
+                    "ai_monthly_searches": {
+                        "label": "AI monthly",
+                        "format": "array"
+                    }
+                }
+            }
+        },
+        "errors": {
+            "title": "Keywords not accepted (free)",
+            "transformation": {
+                "fields": [
+                    "input_keyword",
+                    "keyword",
+                    "errorCode",
+                    "error"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "input_keyword": {
+                        "label": "As typed"
+                    },
+                    "keyword": {
+                        "label": "Keyword"
+                    },
+                    "errorCode": {
+                        "label": "Error code"
+                    },
+                    "error": {
+                        "label": "Error"
+                    }
+                }
+            }
+        }
+    }
+}
